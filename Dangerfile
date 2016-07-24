@@ -56,7 +56,7 @@ if @SDM_DANGER_REPORT_CIRCLE_CI_ARTIFACTS
 			message_string += '('+circle_ci_artifact_path+artifact['path']+')'
 
 			# if this isn't the last artifact then append the " & " string to make this one line
-			message_string += ' & ' if build_artifacts.last != artifact
+			message_string += ' & ' if @SDM_DANGER_REPORT_CIRCLE_CI_ARTIFACTS.last != artifact
 		end
 		message(message_string)
 	end
