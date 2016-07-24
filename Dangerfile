@@ -52,7 +52,7 @@ if @SDM_DANGER_REPORT_CIRCLE_CI_ARTIFACTS
 		message_string = ''
 		@SDM_DANGER_REPORT_CIRCLE_CI_ARTIFACTS.each do |artifact|
 			# create a markdown link that uses the message text and the artifact path
-			message_string  = '['+artifact['message']+']'
+			message_string += '['+artifact['message']+']'
 			message_string += '('+circle_ci_artifact_path+artifact['path']+')'
 
 			# if this isn't the last artifact then append the " & " string to make this one line
