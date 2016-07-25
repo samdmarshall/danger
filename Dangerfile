@@ -33,8 +33,7 @@ if @SDM_DANGER_REPORT_CIRCLE_CI_ARTIFACTS
 	project_name = ENV['CIRCLE_PROJECT_REPONAME']
 	build_number = ENV['CIRCLE_BUILD_NUM']
 	node_index = ENV['CIRCLE_NODE_INDEX']
-	artifacts_path = ENV['CIRCLE_ARTIFACTS']
-	should_display_message = username && project_name && build_number && node_index && artifacts_path
+	should_display_message = username && project_name && build_number && node_index
 	if should_display_message
 
 		# build the path to where the circle CI artifacts will be uploaded to
@@ -46,8 +45,7 @@ if @SDM_DANGER_REPORT_CIRCLE_CI_ARTIFACTS
 		circle_ci_artifact_path += build_number
 		circle_ci_artifact_path += '/artifacts/'
 		circle_ci_artifact_path += node_index
-		circle_ci_artifact_path += artifacts_path
-		circle_ci_artifact_path += '/'
+		circle_ci_artifact_path += '/$CIRCLE_ARTIFACTS/'
 
 		message_string = ''
 		@SDM_DANGER_REPORT_CIRCLE_CI_ARTIFACTS.each do |artifact|
